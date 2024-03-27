@@ -1,8 +1,10 @@
+import uuid
 from pydantic import BaseModel
 from typing import Optional
-import models
+
 
 class StudentBase(BaseModel):
+    id: str
     firstname: str
     middlename: str
     lastname: str
@@ -10,8 +12,13 @@ class StudentBase(BaseModel):
     email: str
     password: str
 
-class StudentCreate(StudentBase):
-    pass
+class StudentCreate(BaseModel):
+    firstname: str
+    middlename: str
+    lastname: str
+    course: str
+    email: str
+    password: str
 
 class StudentUpdate(StudentBase):
     firstname: Optional[str]
@@ -20,6 +27,7 @@ class StudentUpdate(StudentBase):
     course: Optional[str]
     email: Optional[str]
     password: Optional[str]
+
 class StudentInDB(StudentBase):
     id: uuid.UUID
 
