@@ -1,0 +1,14 @@
+fastapi
+asyncpg
+psycopg2
+uvicorn
+sqlalchemy
+alembic
+pydantic
+bcrypt
+passlib
+python-jose
+python-multipart
+requests
+pytest
+httpx
